@@ -21,7 +21,7 @@ After each sync, skills refresh **`.ref/ref-index.md`** — a local map of modul
 
 | Topic | Path | Summary |
 |-------|------|---------|
-| *(add rows as you organize topics)* | | |
+| Why containers? | [docker/fundamentals/why-containers](docker/fundamentals/why-containers) | Traditional deployment vs images; motivation before first `docker run` |
 
 ## Layout
 
