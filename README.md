@@ -2,6 +2,21 @@
 
 Personal notes, configs, and experiments while learning Docker and Kubernetes.
 
+## Local references (private)
+
+Course clones and **course-notes PDF** live in **`.ref/`** (gitignored). Populate locally, for example:
+
+```
+.ref/
+├── docker-course/      # git clone of the Docker course repo
+├── kubernetes-course/  # git clone of the Kubernetes course repo
+└── docker_k8s_slides.pdf
+```
+
+Skills discover and sync these paths on each run; they are not committed to this repo.
+
+After each sync, skills refresh **`.ref/ref-index.md`** — a local map of modules, exercises, sample apps, and PDF notes paths. Agents read topic-matched exercise + PDF sections (not the whole PDF every time). With `pdftotext` installed, **`.ref/pdf-notes-extract.txt`** is also generated for fast search.
+
 ## Index
 
 | Topic | Path | Summary |
@@ -26,7 +41,7 @@ After experimenting, ask the agent to run a skill by name:
 | **organize-docker-k8s-learnings** | File uncommitted work, document it, and/or set folder layout rules |
 | **polish-docker-k8s-note** | Polish one note and/or set writing-format rules |
 
-Both skills **save** folder and format preferences you state in chat into `user-conventions.md` for future runs.
+Both skills **save** folder and format preferences you state in chat into `user-conventions.md`, and **sync** course repos under `.ref/` when writing or polishing notes.
 
 Example prompts:
 

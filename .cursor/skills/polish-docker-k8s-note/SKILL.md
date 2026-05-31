@@ -1,10 +1,9 @@
 ---
 name: polish-docker-k8s-note
 description: >-
-  Rewrites and formats a single Docker or Kubernetes learning note for clarity,
-  applies user writing-format rules from user-conventions.md, and persists new
-  format preferences when the user specifies them. Use for polish/format-only
-  requests or when defining note style without reorganizing files.
+  Polishes a Docker or Kubernetes learning note using user-conventions.md,
+  synced private .ref course clones, and course-notes PDF for accuracy. Use for
+  format-only requests, note polish, or note style preferences without reorganizing.
 disable-model-invocation: true
 ---
 
@@ -23,6 +22,10 @@ For uncommitted files scattered in the repo, use **organize-docker-k8s-learnings
 ## Step 0: Load and update conventions (always first)
 
 Same as organize skill — read [user-conventions.md](../organize-docker-k8s-learnings/user-conventions.md) first. If the user defines or changes **writing format** (or folder rules that affect note paths), follow [conventions-workflow.md](../organize-docker-k8s-learnings/conventions-workflow.md) before polishing.
+
+## Step 0b: Private reference sources (`.ref/`)
+
+Before polishing, run [ref-sources-workflow.md](../organize-docker-k8s-learnings/ref-sources-workflow.md): sync clones, refresh `ref-index.md` if needed, read index then relevant exercises **and matching PDF course-notes sections** (or grep `pdf-notes-extract.txt`). Do not expose `.ref` paths or remotes in the polished note.
 
 ## Steps
 

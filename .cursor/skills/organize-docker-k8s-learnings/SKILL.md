@@ -1,11 +1,11 @@
 ---
 name: organize-docker-k8s-learnings
 description: >-
-  Organizes Docker and Kubernetes learning artifacts in this repo: scans
-  uncommitted changes, moves files into the folder layout, writes or polishes
-  notes, and persists user folder/format preferences into user-conventions.md.
-  Use when organizing learnings, specifying repo layout or note format, or
-  arranging uncommitted Docker/Kubernetes work.
+  Organizes Docker and Kubernetes learning artifacts: syncs private .ref course
+  clones, uses .ref repos and course-notes PDF when writing notes, scans uncommitted
+  changes, moves files into layout, persists preferences in user-conventions.md.
+  Use when organizing learnings, arranging experiments, or updating notes with
+  course reference material.
 disable-model-invocation: true
 ---
 
@@ -25,12 +25,24 @@ Also invoke when the user only wants to **set or change** folder structure or no
 2. If the user message (or same-thread context) specifies **folder structure** or **writing format**, follow [conventions-workflow.md](conventions-workflow.md): update `user-conventions.md`, sync `folder-structure.md` / `note-template.md` when appropriate, tell the user what was saved.
 3. Apply all rules from **user-conventions** when planning paths and writing notes (override defaults).
 
+## Step 0b: Private reference sources (`.ref/`)
+
+Before writing or updating notes, follow [ref-sources-workflow.md](ref-sources-workflow.md):
+
+1. **Discover** `.ref/` from the learning-repo root (gitignored — never commit it).
+2. **Sync** every git clone under `.ref` with its remote default branch (`fetch` + `pull --ff-only`; resolve branch on the fly).
+3. **Refresh** `.ref/ref-index.md` when repos changed or index is stale (script in workflow).
+4. **Read** `ref-index.md` first, then matching exercises + **topic-relevant PDF course notes** (not the whole PDF; see Step C–D).
+
+If `.ref` is absent, continue without course cross-check. Do not put `.ref` paths or remote URLs in committed notes.
+
 ## Workflow (follow in order)
 
 Copy this checklist and mark items as you go:
 
 ```
 - [ ] 0. Load / update user conventions
+- [ ] 0b. Sync .ref clones, refresh ref-index.md if needed, map via index
 - [ ] 1. Inventory uncommitted changes
 - [ ] 2. Classify each artifact
 - [ ] 3. Plan target paths (no duplicates)
@@ -102,7 +114,7 @@ Each topic folder's primary note (default `README.md`) is the learning doc. Use 
 - Add a **Date** line near the top when the session date is known (from git or user context)
 - End with **Takeaways** (3–5 bullets) and optional **References** (official docs links)
 
-**New notes** — synthesize from file contents and diffs: what was tried, commands used, purpose of each config file.
+**New notes** — synthesize from file contents and diffs: what was tried, commands used, purpose of each config file. Cross-check against synced `.ref` course repos, exercises, and course-notes PDF (topic sections) per [ref-sources-workflow.md](ref-sources-workflow.md).
 
 Do not add filler ("Docker is a platform..."). Assume future-you remembers basics; focus on what *you* did and learned.
 
@@ -142,3 +154,4 @@ Reply with:
 - [conventions-workflow.md](conventions-workflow.md) — how to detect, save, and sync preferences
 - [folder-structure.md](folder-structure.md) — default directory tree and naming rules
 - [note-template.md](note-template.md) — default template for topic notes
+- [ref-sources-workflow.md](ref-sources-workflow.md) — discover `.ref`, sync clones, use course + PDF when writing notes
