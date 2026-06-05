@@ -22,6 +22,7 @@ After each sync, skills refresh **`.ref/ref-index.md`** — a local map of modul
 | Topic | Path | Summary |
 |-------|------|---------|
 | Why containers? | [docker/fundamentals/why-containers](docker/fundamentals/why-containers) | Traditional deployment vs images; motivation before first `docker run` |
+| VMs vs containers | [docker/fundamentals/vm-vs-containers](docker/fundamentals/vm-vs-containers) | Hypervisor + guest OS vs runtime + shared kernel; weight and boot time |
 
 ## Layout
 
